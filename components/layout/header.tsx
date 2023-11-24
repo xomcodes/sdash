@@ -10,8 +10,10 @@ import { RiSettingsLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiTranslate2 } from "react-icons/ri";
 import { TextInput, rem } from "@mantine/core";
+import { useTheme } from "next-themes";
 
 export const Header = () => {
+  const { resolvedTheme, setTheme } = useTheme();
   return (
     <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF]">
       {/* <section className=" bg-white flex gap-[14px] px-[24px] py-[11px] rounded-xl">

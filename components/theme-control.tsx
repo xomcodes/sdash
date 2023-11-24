@@ -1,68 +1,57 @@
+import { clsx } from "@mantine/core";
 import { Moon, Sun1 } from "iconsax-react";
+import { useTheme } from "next-themes";
 import React from "react";
 
 export const ThemeControl = () => {
+  const { resolvedTheme, setTheme } = useTheme();
   return (
-    // <main className='flex items-center rounded-xs px-[12px] py-[16px] gap-[12px]'
-
-    // >
-    //   <section className='py-[12px] '
-    //     sx={{
-    //       ...myStyles,
-    //       ...getRenderedOption({
-    //         light: {
-    //           background: "white",
-    //           boxShadow: theme.shadows.xs,
-    //           borderRadius: theme.radius.xs,
-    //           paddingBlock: theme.spacing.xs,
-    //           paddingInline: theme.spacing.sm,
-    //         },
-    //         dark: {},
-    //       }),
-    //     }}
-    //     gap={theme.spacing.sms}
-    //     align="center"
-    //     onClick={() => toggleColorScheme("light")}
-    //   >
-    //     <Sun1 size="20" variant="Bold" />
-    //     <Title order={4}>Light</Title>
-    //   </section>
-
-    //   <Flex
-    //     sx={{
-    //       color: getRenderedOption({
-    //         light: theme.colors.white[7],
-    //         dark: "#ffffff",
-    //       }),
-    //       cursor: "pointer",
-    //       ...getRenderedOption({
-    //         light: {},
-    //         dark: {
-    //           background: theme.colors.violet[9],
-    //           borderRadius: theme.radius.xs,
-    //           paddingBlock: theme.spacing.xs,
-    //           paddingInline: theme.spacing.sm,
-    //         },
-    //       }),
-    //     }}
-    //     gap={theme.spacing.sms}
-    //     align="center"
-    //     onClick={() => toggleColorScheme("dark")}
-    //   >
-    //     <Moon size="20" variant="Outline" />
-    //     <Title order={4}>Dark</Title>
-    //   </Flex>
-    // </main>
-
-    <main className=" bg-gray-300 px-2 py-2 rounded-lg flex gap-3 items-center">
-      <section className=" flex gap-1 px-1 py-1 rounded-md bg-white items-center cursor-pointer">
-        <Sun1 size="24" variant="Bold" />
-        <h2 className=" text-xs font-medium">Light</h2>
+    <main className=" bg-gray-300 dark:bg-[#282541] px-2 py-2 rounded-lg flex gap-2 items-center">
+      <section
+        onClick={() => setTheme("light")}
+        className={clsx(
+          resolvedTheme === "light" ? "py-1 px-2 rounded-md bg-white" : null,
+          "flex gap-1 items-center cursor-pointer"
+        )}
+      >
+        <Sun1
+          // className={resolvedTheme === "light" ? "#A3AED0" : "#ffff"}
+          size="24"
+          color={resolvedTheme === "light" ? "#000" : "#5B5A5A"}
+          variant="Bold"
+        />
+        <h2
+          className={clsx(
+            resolvedTheme === "light" ? "#000" : "#5B5A5A",
+            " text-xs font-medium"
+          )}
+        >
+          Light
+        </h2>
       </section>
 
-      <section className=" flex gap-1 items-center">
-        <Moon size="22" variant="Outline" />
-        <h2 className=" text-xs font-medium ">Dark</h2>
+      <section
+        onClick={() => setTheme("dark")}
+        className={clsx(
+          resolvedTheme === "dark"
+            ? "p-1 rounded-md bg-[#353255] px-2 flex"
+            : null,
+          "flex gap-1 items-center cursor-pointer"
+        )}
+      >
+        <Moon
+          size="22"
+          color={resolvedTheme === "light" ? "#5B5A5A" : "#fff"}
+          variant="Outline"
+        />
+        <h2
+          className={clsx(
+            resolvedTheme === "light" ? "#5B5A5A" : "#fff",
+            " text-xs font-medium "
+          )}
+        >
+          Dark
+        </h2>
       </section>
     </main>
   );
