@@ -15,7 +15,7 @@ export const DashboardMain = () => {
           <DashboardChartSetup />
         </div>
 
-        <div className=" flex  flex-col w-[40%] gap-[clamp(12px,1.7vw,24px)]  max-[1370px]:w-full">
+        <div className=" flex  flex-col w-[35%] gap-[clamp(12px,1.7vw,24px)]  max-[1370px]:w-full">
           <TransactionDetails />
           <QuickTransfer />
         </div>

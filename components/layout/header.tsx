@@ -1,21 +1,16 @@
-import {
-  Message,
-  SearchNormal,
-  Notification,
-  Image,
-  HambergerMenu,
-} from "iconsax-react";
 import React from "react";
+import { TranslationPopover } from "..";
+
+import { useTheme } from "next-themes";
+import { Message, SearchNormal, Notification } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RiTranslate2 } from "react-icons/ri";
 import { Avatar, TextInput, rem } from "@mantine/core";
-import { useTheme } from "next-themes";
 
 export const Header = () => {
-  const { resolvedTheme, setTheme } = useTheme();
+  // const { resolvedTheme, setTheme } = useTheme();
   return (
-    <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] dark:bg-[#2b396b] ">
+    <header className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] dark:bg-[#2b396b] ">
       <TextInput
         miw="25%"
         styles={{
@@ -32,10 +27,12 @@ export const Header = () => {
             lineHeight: "normal",
             border: `none`,
             background: "white",
+            // background: resolvedTheme === "light" ? "white" : "#FFFFFFCC ",
             borderRadius: "15px",
             paddingBlock: "15px",
             "&::placeholder": {
               color: "#ccc",
+              // color: resolvedTheme === "light" ? "#ccc" : "#000 ",
               fontWeight: 400,
               fontSize: "14px",
               lineHeight: "22.4px",
@@ -45,27 +42,19 @@ export const Header = () => {
             },
           },
         }}
-        icon={<SearchNormal size={22} />}
+        icon={<SearchNormal size={22} color="#ccc" />}
         placeholder="Search Property..."
       />
 
       <section className="flex gap-[clamp(16px,2.2vw,32px)] items-center ">
         <div className=" flex gap-[clamp(12px,1.6vw,24px)] items-center max-[800px]:hidden">
+          <TranslationPopover />
           <Message size="24" className=" cursor-pointer" />
           <RiSettingsLine size="24" className=" cursor-pointer" />
           <Notification size="24" className=" cursor-pointer" />
-          <RiTranslate2 size="24" className=" cursor-pointer" />
         </div>
 
         <div className=" flex gap-[14px] items-center whitespace-nowrap ">
-          {/* <figure className="w-[]">
-            <img
-              src="/profile-pix.svg"
-              alt=" profile picture"
-              width={32}
-              height={32}
-            />
-          </figure> */}
           <Avatar src="/profile-pix.svg" size={32} />
           <h4 className=" text-[16px] font-normal text-my-black dark:text-white">
             Alex Smith
@@ -73,6 +62,6 @@ export const Header = () => {
           <GiHamburgerMenu size={22} className="cursor-pointer" />
         </div>
       </section>
-    </main>
+    </header>
   );
 };

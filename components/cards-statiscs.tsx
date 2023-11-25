@@ -3,6 +3,8 @@ import React from "react";
 import { IssuedCard, TransactionIcon } from "./icons";
 import clsx from "clsx";
 import { RiArrowUpSFill } from "react-icons/ri";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
 
 const cardList = [
   {
@@ -39,6 +41,13 @@ const cardList = [
   },
 ];
 export const CardsStatiscs = () => {
+  const { data: cardData } = useQuery({
+    queryFn: () => builder.use().transactions.overview(),
+    queryKey: builder.transactions.overview.get(),
+    // select:( {data}) => data
+  });
+
+  console.log(cardData);
   return (
     <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto ">
       {cardList.map(

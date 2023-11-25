@@ -12,17 +12,17 @@ import { Bar } from "react-chartjs-2";
 export default function TopBarChart() {
   ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
   const data = {
-    labels: ["", "", "", "", "", ""],
+    labels: ["", "", "", "", "", "", ""],
     datasets: [
       {
         label: "764",
-        data: [55, 20, 35, 45, 35, 48],
+        data: [55, 20, 35, 45, 35, 48, 30, 50],
         backgroundColor: "#876AFE",
         // borderWidth: 1,
         barPercentage: 0.3,
         categoryPercentage: 0.5,
         borderRadius: 20,
-        width: 12,
+        width: 15,
       },
     ],
   };
@@ -68,8 +68,8 @@ export default function TopBarChart() {
   //   },
   // };
   return (
-    <div className="bar">
-      <Bar data={data} options={options} />{" "}
+    <div className="bar h-[80px] w-full ">
+      <Bar data={data} options={options} width="100%" />
     </div>
   );
 }

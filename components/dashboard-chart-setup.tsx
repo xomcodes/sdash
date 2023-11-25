@@ -1,9 +1,11 @@
 import { Text } from "@mantine/core";
 import { ArrowDown2 } from "iconsax-react";
 import React from "react";
+import dynamic from "next/dynamic";
 import { IoMdSquare } from "react-icons/io";
-import { SalaryAreaChart } from "./salary-area-chart";
+// import { SalaryAreaChart } from "./salary-area-chart";
 
+// const SalaryAreaChart = dynamic(() => import("./salary-area-chart"), { ssr: false });
 export const DashboardChartSetup = () => {
   return (
     <main className=" flex flex-col  gap-[18px]">
@@ -39,7 +41,7 @@ export const DashboardChartSetup = () => {
           </span>
         </div>
       </section>
-      <SalaryAreaChart />
+      {/* <SalaryAreaChart /> */}
     </main>
   );
 };

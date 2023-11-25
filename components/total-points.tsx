@@ -1,9 +1,9 @@
 import React from "react";
-import { Coins } from "./icons";
-import { Divider } from "@mantine/core";
 import Link from "next/link";
+import { Coins } from "./icons";
 import { TotalPointsTable } from "./total-points-table";
-import { useTheme } from "next-themes";
+
+import { Divider } from "@mantine/core";
 
 export const TotalPoints = () => {
   return (
