@@ -1,100 +1,86 @@
-import { ArrowUp2, Profile2User } from "iconsax-react";
+import { ArrowDown2, Profile2User } from "iconsax-react";
 import React from "react";
 import { IssuedCard, TransactionIcon } from "./icons";
 import clsx from "clsx";
 import { RiArrowUpSFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
+import capitalize from "lodash.capitalize";
+import { amountFormatter } from "@/utils";
 
-const cardList = [
-  {
-    id: 1,
-    icon: <Profile2User color="#2F70F2" />,
-    header: "Active Users",
-    price: "14,7 M",
-    dropIcon: <RiArrowUpSFill color="#4EEA7A" size="24" />,
-    percentage: "32%",
-    color: "#2F70F2",
-    dropcolor: "#4EEA7A",
-  },
-  {
-    id: 2,
-    icon: <TransactionIcon />,
-    header: "Transactions Users",
-    price: "$ 1.234.10",
-    dropIcon: (
-      <RiArrowUpSFill color="#D62C2C" size="24" className=" rotate-180" />
-    ),
-    percentage: "32%",
-    color: "#876AFE",
-    dropcolor: "#D62C2C",
-  },
-  {
-    id: 3,
-    icon: <IssuedCard />,
-    header: "Cards Issued ",
-    price: "3.442 ",
-    dropIcon: <RiArrowUpSFill color="#4EEA7A" size="24" />,
-    percentage: "32%",
-    color: "#FFBC02",
-    dropcolor: "#4EEA7A",
-  },
+const iconList = [
+  <Profile2User color="#2F70F2" />,
+
+  <TransactionIcon />,
+
+  <IssuedCard />,
 ];
+
+const textColor = ["#2F70F2", "#876AFE ", "#FFBC02"];
+
 export const CardsStatiscs = () => {
   const { data: cardData } = useQuery({
     queryFn: () => builder.use().transactions.overview(),
     queryKey: builder.transactions.overview.get(),
-    // select:( {data}) => data
+    select: ({ data }) => data?.data,
   });
 
-  console.log(cardData);
   return (
     <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto ">
-      {cardList.map(
-        ({
-          icon,
-          header,
-          dropIcon,
-          percentage,
-          price,
-          dropcolor,
-          id,
-          color,
-        }) => (
-          <section
-            key={id}
-            className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-my-blue rounded-lg  w-full min-w-[232px] "
-          >
-            <article className=" flex gap-2">
-              {icon}
-              <h4
+      {cardData?.map(({ name, current, last_month }, idx) => (
+        <section
+          key={idx}
+          className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-my-blue rounded-lg  w-full min-w-[232px] "
+        >
+          <article className=" flex gap-2">
+            {iconList[idx]}
+            <h4
+              style={{
+                color: textColor[idx],
+              }}
+              className="text-[clamp(10px,1vw,16px)] font-medium"
+            >
+              {capitalize(name?.replace("_", " "))}
+            </h4>
+          </article>
+
+          <div className=" flex gap-[6px] items-center">
+            <h3 className="text-my-black dark:text-white  font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
+              ${amountFormatter(current)}
+            </h3>
+            <article className="flex gap-[2px] items-center">
+              <ArrowDown2
+                variant="Bold"
+                color={
+                  (current - (last_month / last_month) * 100)?.toString() < "50"
+                    ? "#D62C2C"
+                    : "#4EEA7A"
+                }
+                size="24"
+                className={clsx(
+                  (current - (last_month / last_month) * 100)?.toString() > "50"
+                    ? "rotate-180"
+                    : null
+                )}
+              />
+              <p
+                className=" text-[clamp(13px,1vw,16px)] font-normal"
                 style={{
-                  color: color,
+                  color:
+                    (current - (last_month / last_month) * 100)?.toString() <
+                    "50"
+                      ? "#D62C2C"
+                      : "#4EEA7",
                 }}
-                className="text-[clamp(10px,1vw,16px)] font-medium"
               >
-                {header}
-              </h4>
+                {(current - (last_month / last_month) * 100)
+                  ?.toString()
+                  ?.slice(0, 2) + "%"}
+              </p>
             </article>
-            <div className=" flex gap-[6px] items-center">
-              <h3 className=" text-my-black dark:text-white  font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
-                {price}
-              </h3>
-              <article
-                className="flex gap-[2px] items-center"
-                style={{
-                  color: dropcolor,
-                }}
-              >
-                {dropIcon}
-                <p className=" text-[clamp(13px,1vw,16px)] font-normal">
-                  {percentage}
-                </p>
-              </article>
-            </div>
-          </section>
-        )
-      )}
+          </div>
+        </section>
+      ))}
     </main>
   );
 };

@@ -40,7 +40,7 @@ const transactionList = [
     color: "#D62C2C",
   },
 ];
-
+const iconList = [<Sportify />, <Cloud />, <Adobe />, <Upwork />];
 export const TransactionDetails = () => {
   const { data: latestTransaction } = useQuery({
     queryFn: () => builder.use().transactions.latest(),
@@ -65,7 +65,8 @@ export const TransactionDetails = () => {
         >
           <div className=" flex justify-between items-center">
             <section className=" flex gap-[12px]">
-              <Avatar src={charged_by?.logo} size={24} />
+              {/* <Avatar src={charged_by?.logo} size={24} /> */}
+              {iconList[idx]}
 
               <article className=" flex flex-col gap-[2px]">
                 <h3 className=" text-[#121212] dark:text-white font-medium text-[12px] ">
@@ -79,10 +80,10 @@ export const TransactionDetails = () => {
             <p
               className=" text-[10px] font-medium"
               style={{
-                color: charge?.type?.includes("debit") ? "red" : "green",
+                color: charge?.type?.includes("debit") ? "#D62C2C" : "#4EEA7A",
               }}
             >
-              {charge?.amount}
+              {charge?.type?.includes("debit") ? "-" : "+"} ${charge?.amount}
             </p>
           </div>
         </section>

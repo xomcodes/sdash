@@ -1,6 +1,7 @@
+import React from "react";
+
 import { Divider } from "@mantine/core";
 import { EmptyWallet } from "iconsax-react";
-import React from "react";
 import { MasterCard, Visa } from "./icons";
 import { useTheme } from "next-themes";
 
@@ -34,7 +35,7 @@ const transferList = [
 ];
 
 export const QuickTransfer = () => {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   return (
     <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl overflow-auto">
       <article className=" flex gap-2 pb-[12PX]">
@@ -53,7 +54,7 @@ export const QuickTransfer = () => {
           {transferList?.map(({ id, cards, debits }) => (
             <div
               key={id}
-              className=" px-[clamp(10px,0.8vw,12px)] py-[clamp(6px,0.6vw,9px)] border border-[#DFDFDF] gap-[12px] flex rounded-[6px] items-center"
+              className=" px-[clamp(11px,0.8vw,12px)] py-[clamp(5px,0.6vw,9px)] border border-[#DFDFDF] gap-[12px] flex rounded-[6px] items-center"
             >
               {cards}
               <article className=" flex flex-col">

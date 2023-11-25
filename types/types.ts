@@ -50,3 +50,20 @@ export interface LatestTransactionChargedBy {
   company: string;
   logo: string;
 }
+
+// Type for Transaction cards
+export interface TransactionCardsResponse {
+  message: string;
+  current_page: number;
+  page_size: number;
+  next_page_url: null;
+  prev_page_url: null;
+  count: number;
+  data: TransactionCardsDatum[];
+}
+
+export interface TransactionCardsDatum {
+  name: string;
+  current: number;
+  last_month: number;
+}

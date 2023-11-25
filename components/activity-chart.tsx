@@ -5,7 +5,9 @@ import { Divider } from "@mantine/core";
 import dynamic from "next/dynamic";
 import { ArrowDown2 } from "iconsax-react";
 
-const TopBarChart = dynamic(() => import("./top-bar-chart"), { ssr: false });
+const TopBarChart = dynamic(() => import("./charts/top-bar-chart"), {
+  ssr: false,
+});
 export const ActivityChart = () => {
   return (
     // <section className=" py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white dark:bg-my-blue  w-[20%] rounded-xl max-[1370px]:w-full ">
