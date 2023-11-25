@@ -9,7 +9,7 @@ const TopBarChart = dynamic(() => import("./top-bar-chart"), { ssr: false });
 const WeekBarChart = dynamic(() => import("./week-bar-chart"), { ssr: false });
 export const ActivityChart = () => {
   return (
-    <section className=" py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white  w-[35%] rounded-xl max-[1370px]:w-full ">
+    <section className=" py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white dark:bg-my-blue  w-[35%] rounded-xl max-[1370px]:w-full ">
       <article className=" flex gap-2 ">
         <Coins />
         <h2 className=" text-[#121212] dark:text-white text-[clamp(13px,1vw,16px)] font-medium">

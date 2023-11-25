@@ -1,4 +1,5 @@
 import { Table } from "@mantine/core";
+import { useTheme } from "next-themes";
 
 const elements = [
   {
@@ -48,6 +49,7 @@ const elements = [
   },
 ];
 export function TotalPointsTable() {
+  const { resolvedTheme, setTheme } = useTheme();
   const rows = elements.map((element) => (
     <tr key={element.name}>
       <td className=" !font-normal !whitespace-nowrap  !text-[#A8A8A8] ">

@@ -54,7 +54,7 @@ export const CardsStatiscs = () => {
         }) => (
           <section
             key={id}
-            className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white rounded-lg  w-full min-w-[232px] "
+            className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-my-blue rounded-lg  w-full min-w-[232px] "
           >
             <article className=" flex gap-2">
               {icon}
@@ -68,7 +68,7 @@ export const CardsStatiscs = () => {
               </h4>
             </article>
             <div className=" flex gap-[6px] items-center">
-              <h3 className="text-[#121212] font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
+              <h3 className=" text-my-black dark:text-white  font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
                 {price}
               </h3>
               <article

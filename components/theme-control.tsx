@@ -6,7 +6,8 @@ import React from "react";
 export const ThemeControl = () => {
   const { resolvedTheme, setTheme } = useTheme();
   return (
-    <main className=" bg-gray-300 dark:bg-[#282541] px-2 py-2 rounded-lg flex gap-2 items-center">
+    <main className=" bg-gray-300 dark:bg-[#2D6DED] px-2 py-2 rounded-lg flex gap-2 items-center">
+      {/* #282541 */}
       <section
         onClick={() => setTheme("light")}
         className={clsx(
@@ -17,7 +18,8 @@ export const ThemeControl = () => {
         <Sun1
           // className={resolvedTheme === "light" ? "#A3AED0" : "#ffff"}
           size="24"
-          color={resolvedTheme === "light" ? "#000" : "#5B5A5A"}
+          color={resolvedTheme === "light" ? "#000" : "#fff"}
+          // #5B5A5A
           variant="Bold"
         />
         <h2
@@ -29,12 +31,11 @@ export const ThemeControl = () => {
           Light
         </h2>
       </section>
-
       <section
         onClick={() => setTheme("dark")}
         className={clsx(
           resolvedTheme === "dark"
-            ? "p-1 rounded-md bg-[#353255] px-2 flex"
+            ? "p-1 rounded-md bg-[#111C44] px-2 flex"
             : null,
           "flex gap-1 items-center cursor-pointer"
         )}

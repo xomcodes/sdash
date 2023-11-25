@@ -2,6 +2,7 @@ import { Divider } from "@mantine/core";
 import { EmptyWallet } from "iconsax-react";
 import React from "react";
 import { MasterCard, Visa } from "./icons";
+import { useTheme } from "next-themes";
 
 const transferList = [
   {
@@ -33,11 +34,15 @@ const transferList = [
 ];
 
 export const QuickTransfer = () => {
+  const { resolvedTheme, setTheme } = useTheme();
   return (
-    <section className=" p-[20px] flex flex-col bg-white rounded-xl overflow-auto">
+    <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl overflow-auto">
       <article className=" flex gap-2 pb-[12PX]">
-        <EmptyWallet size="20" color="#121212" />
-        <h2 className=" text-[#121212] dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
+        <EmptyWallet
+          size="20"
+          color={resolvedTheme === "light" ? "#000" : "#fff"}
+        />
+        <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
           Quick Transfer
         </h2>
       </article>

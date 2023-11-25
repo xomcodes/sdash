@@ -9,13 +9,13 @@ import React from "react";
 import { RiSettingsLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiTranslate2 } from "react-icons/ri";
-import { TextInput, rem } from "@mantine/core";
+import { Avatar, TextInput, rem } from "@mantine/core";
 import { useTheme } from "next-themes";
 
 export const Header = () => {
   const { resolvedTheme, setTheme } = useTheme();
   return (
-    <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] ">
+    <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] dark:bg-[#2b396b] ">
       <TextInput
         miw="25%"
         styles={{
@@ -58,15 +58,16 @@ export const Header = () => {
         </div>
 
         <div className=" flex gap-[14px] items-center whitespace-nowrap ">
-          <figure className="w-[]">
+          {/* <figure className="w-[]">
             <img
               src="/profile-pix.svg"
               alt=" profile picture"
               width={32}
               height={32}
             />
-          </figure>
-          <h4 className=" text-[16px] font-normal text-[#121212]">
+          </figure> */}
+          <Avatar src="/profile-pix.svg" size={32} />
+          <h4 className=" text-[16px] font-normal text-my-black dark:text-white">
             Alex Smith
           </h4>
           <GiHamburgerMenu size={22} className="cursor-pointer" />

@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,6 +16,8 @@ const config: Config = {
         blue: "#2F70F2",
         grey: "#A8A8A8",
         violett: "#282541",
+        "my-blue": "#111C44",
+        "my-black": "#121212",
       },
     },
   },

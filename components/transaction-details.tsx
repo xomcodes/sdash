@@ -1,6 +1,7 @@
 import React from "react";
 import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "./icons";
 import { Divider } from "@mantine/core";
+import { useTheme } from "next-themes";
 
 const transactionList = [
   {
@@ -39,11 +40,12 @@ const transactionList = [
 ];
 
 export const TransactionDetails = () => {
+  const { resolvedTheme, setTheme } = useTheme();
   return (
-    <section className=" p-[20px] flex flex-col bg-white rounded-xl">
-      <article className=" flex gap-2 pb-4">
+    <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl">
+      <article className=" flex gap-2 pb-4 items-center">
         <TransactionArrow />
-        <h2 className=" text-[#121212] text-[clamp(13px,1vw,16px)] font-medium">
+        <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
           Transaction Details
         </h2>
       </article>
