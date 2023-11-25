@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider>
       <ThemeProvider attribute="class" enableSystem={false} enableColorScheme>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </ThemeProvider>
     </MantineProvider>
   );

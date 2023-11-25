@@ -4,9 +4,9 @@ import { Header } from ".";
 
 export const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="grid grid-cols-[220px,1fr] h-screen overflow-auto">
+    <main className="flex items-center h-screen overflow-auto">
       <SideBar />
-      <div className=" flex flex-col ">
+      <div className=" flex-1 flex flex-col h-full overflow-auto">
         <Header />
         {children}
       </div>

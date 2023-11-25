@@ -99,7 +99,7 @@ export const SideBarList = () => {
     <section className=" flex flex-col gap-[clamp(38px,5vw,72px)]">
       {listArr.map(({ name, id, children }) => (
         <div className="" key={id}>
-          <h4 className=" border-b border-b-[#E3E3E3] pb-[18px] text-[clamp(9px,1vw,16px]) dark:text-white text-[#1F1F1F] font-medium  ">
+          <h4 className=" border-b border-b-[#E3E3E3] pb-[18px] text-[clamp(9px,1vw,16px]) dark:text-white text-[#1F1F1F] font-medium  whitespace-nowrap ">
             {name}
           </h4>
           <ul className="flex flex-col gap-[clamp(14px,1.9vw,16px)] pt-[18px] ">

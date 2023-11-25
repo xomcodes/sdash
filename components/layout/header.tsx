@@ -15,16 +15,7 @@ import { useTheme } from "next-themes";
 export const Header = () => {
   const { resolvedTheme, setTheme } = useTheme();
   return (
-    <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF]">
-      {/* <section className=" bg-white flex gap-[14px] px-[24px] py-[11px] rounded-xl">
-        <SearchNormal size="24" color="#A8A8A8" />
-        <input
-          type="text"
-          className="border-none  outline-none"
-          placeholder="Search property..."
-        />
-      </section> */}
-
+    <main className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] ">
       <TextInput
         miw="25%"
         styles={{
@@ -63,7 +54,7 @@ export const Header = () => {
           <Message size="24" className=" cursor-pointer" />
           <RiSettingsLine size="24" className=" cursor-pointer" />
           <Notification size="24" className=" cursor-pointer" />
-          {/* <RiTranslate2 size="24" className=" cursor-pointer" /> */}
+          <RiTranslate2 size="24" className=" cursor-pointer" />
         </div>
 
         <div className=" flex gap-[14px] items-center whitespace-nowrap ">
