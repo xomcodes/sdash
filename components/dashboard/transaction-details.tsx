@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "../icons";
 import { Avatar, Divider } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import dayjs from "dayjs";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const transactionList = [
   {
@@ -41,9 +42,15 @@ const transactionList = [
     color: "#D62C2C",
   },
 ];
-const iconList = [<Sportify />, <Cloud />, <Adobe />, <Upwork />];
-const list = {};
+
+const list: Record<string, ReactNode> = {
+  Sportify: <Sportify />,
+  "Google Cloud": <Cloud />,
+  "Adobe XD 2023": <Adobe />,
+  Upwork: <Upwork />,
+};
 export const TransactionDetails = () => {
+  const { resolvedTheme } = useTheme();
   const { data: latestTransaction } = useQuery({
     queryFn: () => builder.use().transactions.latest(),
     queryKey: builder.transactions.latest.get(),
@@ -52,13 +59,12 @@ export const TransactionDetails = () => {
 
   return (
     <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl flex-1">
-      <article className=" flex gap-2 pb-4 items-center">
+      <article className=" flex gap-2 pb-4 items-center border-b border-b-[#E3E3E3] dark:border-b-grey">
         <TransactionArrow />
         <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
           Transaction Details
         </h2>
       </article>
-      <Divider bg="#E3E3E3" />
 
       {latestTransaction?.map(({ created_at, charge, charged_by }, idx) => (
         <section
@@ -67,13 +73,7 @@ export const TransactionDetails = () => {
         >
           <div className=" flex justify-between items-center">
             <section className=" flex gap-[12px]">
-              <img
-                src={charged_by?.logo}
-                className="rounded-full w-6 h-6"
-                alt="logo"
-              />
-
-              {/* {iconList[idx]} */}
+              {list[charged_by?.company]}
 
               <article className=" flex flex-col gap-[2px]">
                 <h3 className=" text-[#121212] dark:text-white font-medium text-[12px] ">

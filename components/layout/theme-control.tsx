@@ -1,18 +1,25 @@
 import { clsx } from "@mantine/core";
 import { Moon, Sun1 } from "iconsax-react";
 import { useTheme } from "next-themes";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const ThemeControl = () => {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
   return (
-    <main className=" bg-gray-300 dark:bg-[#2D6DED] px-2 py-2 rounded-lg flex gap-2 items-center">
+    <main className=" bg-gray-300 dark:bg-[#2D6DED] w-fit px-2 py-2 rounded-lg flex gap-2 items-center">
       {/* #282541 */}
       <section
         onClick={() => setTheme("light")}
         className={clsx(
-          resolvedTheme === "light" ? "py-1 px-2 rounded-md bg-white" : null,
-          "flex gap-1 items-center cursor-pointer"
+          resolvedTheme === "light"
+            ? " rounded-md bg-white"
+            : "bg-[transparent]",
+          "flex gap-1 items-center cursor-pointer py-1 px-2"
         )}
       >
         <Sun1
@@ -35,9 +42,9 @@ export const ThemeControl = () => {
         onClick={() => setTheme("dark")}
         className={clsx(
           resolvedTheme === "dark"
-            ? "p-1 rounded-md bg-[#111C44] px-2 flex"
-            : null,
-          "flex gap-1 items-center cursor-pointer"
+            ? "rounded-md bg-[#111C44]"
+            : "bg-[transparent]",
+          "flex gap-1 py-1 px-2 items-center cursor-pointer"
         )}
       >
         <Moon

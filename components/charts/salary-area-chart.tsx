@@ -2,18 +2,28 @@ import React, { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
+import dayjs from "dayjs";
 
+const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 export default function SalaryAreaChart() {
-  const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
+  const { data: salaryData } = useQuery({
+    queryFn: () => builder.use().transactions.pay_logs(),
+    queryKey: builder.transactions.pay_logs.get(),
+    select: ({ data }) => data?.data,
+  });
+  console.log({ salaryData });
 
   const series = [
     {
-      name: "series1",
-      data: [31, 40, 28, 51, 42, 109, 100],
+      name: "Salary",
+      // data: [31, 40, 28, 51, 42, 109, 100],
+      data: salaryData?.map((item) => item?.salary_paid),
     },
     {
-      name: "series2",
-      data: [11, 32, 45, 32, 34, 52, 41],
+      name: "Cash Bond",
+      data: salaryData?.map((item) => item?.cash_bond_bought),
     },
   ];
   const options: ApexOptions = {
@@ -34,19 +44,7 @@ export default function SalaryAreaChart() {
     },
     xaxis: {
       type: "datetime",
-      categories: [
-        "20 June",
-        "21 June",
-        "22 June",
-        "23 June",
-        "24 June",
-        "25 June",
-        "26 June",
-        // "27 June",
-        // "28 June",
-        // "29 June",
-        // "30 June",
-      ],
+      categories: salaryData?.map((item) => dayjs(item?.date).format("D MMM")),
     },
     fill: {
       type: "gradient",
@@ -83,7 +81,14 @@ export default function SalaryAreaChart() {
 
   return (
     <div id="chart">
-      <ApexCharts options={options} series={series} type="area" height={280} />
+      {salaryData ? (
+        <ApexCharts
+          options={options}
+          series={series as any}
+          type="area"
+          height={280}
+        />
+      ) : null}
     </div>
   );
 }

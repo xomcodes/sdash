@@ -32,13 +32,13 @@ export function TotalPointsTable() {
     <Table verticalSpacing={16}>
       <thead className=" border-black">
         <tr className=" border-b border-b-[#121212] text-[#121212]">
-          <th>Name</th>
-          <th>Actual</th>
-          <th>Forecast</th>
-          <th>Variance</th>
-          <th>Variance</th>
-          <th>Variance</th>
-          <th>Variance</th>
+          <th className="!text-black dark:!text-white">Name</th>
+          <th className="!text-black dark:!text-white">Actual</th>
+          <th className="!text-black dark:!text-white">Forecast</th>
+          <th className="!text-black dark:!text-white">Variance</th>
+          <th className="!text-black dark:!text-white">Variance</th>
+          <th className="!text-black dark:!text-white">Variance</th>
+          <th className="!text-black dark:!text-white">Variance</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

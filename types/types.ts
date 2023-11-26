@@ -67,3 +67,20 @@ export interface TransactionCardsDatum {
   current: number;
   last_month: number;
 }
+
+// Type for the Area Chart
+export interface SalaryChartResponse {
+  message: string;
+  current_page: number;
+  page_size: number;
+  next_page_url: null;
+  prev_page_url: null;
+  count: number;
+  data: SalaryChartDatum[];
+}
+
+export interface SalaryChartDatum {
+  date: Date;
+  salary_paid: number;
+  cash_bond_bought: number;
+}

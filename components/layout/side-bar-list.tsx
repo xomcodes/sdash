@@ -99,15 +99,15 @@ export const SideBarList = () => {
     <section className=" flex flex-col gap-[clamp(38px,5vw,72px)]">
       {listArr.map(({ name, id, children }) => (
         <div className="" key={id}>
-          <h4 className=" border-b border-b-[#E3E3E3] pb-[18px] text-[clamp(9px,1vw,16px]) dark:text-white text-[#1F1F1F] font-medium  whitespace-nowrap ">
+          <h4 className=" border-b border-b-[#E3E3E3] dark:border-b-grey  pb-[18px] text-[clamp(9px,1vw,16px]) dark:text-white text-[#1F1F1F] font-medium  whitespace-nowrap ">
             {name}
           </h4>
           <ul className="flex flex-col gap-[clamp(14px,1.9vw,16px)] pt-[18px] ">
             {children.map(({ id, icon, name, link }) => (
               <li
                 className={clsx(
-                  pathname.includes(link) ? " text-blue" : null,
-                  "flex gap-2 items-center dark:text-white text-[#121212] font-normal  text-[14px] cursor-pointer hover:bg-grey py-1.5 rounded-[5px] px-1 "
+                  pathname.includes(link) ? " text-blue dark:text-blue" : null,
+                  "flex gap-2 items-center dark:text-white text-[#121212] font-normal  text-[14px] cursor-pointer hover:bg-[#2D6DED] hover:text-white    py-1.5 rounded-[5px] px-1 "
                 )}
                 key={id}
               >

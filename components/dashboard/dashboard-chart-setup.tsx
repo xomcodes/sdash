@@ -3,6 +3,9 @@ import { ArrowDown2 } from "iconsax-react";
 import React from "react";
 import dynamic from "next/dynamic";
 import { IoMdSquare } from "react-icons/io";
+import { useRouter } from "next/router";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
 
 const SalaryAreaChart = dynamic(() => import("@/charts/salary-area-chart"), {
   ssr: false,

@@ -22,7 +22,7 @@ export const DashboardMain = () => {
       </section>
       {/* dark:bg-[#111C44] Dashboardmain */}
 
-      <div className=" flex gap-[clamp(12px,1.6vw,24px)] max-[1370px]:flex-col ">
+      <div className=" flex gap-[clamp(12px,1.6vw,24px)] max-[850px]:flex-col ">
         <ActivityChart />
         <TotalPoints />
       </div>

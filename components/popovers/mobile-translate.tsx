@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Popover, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ArrowDown, ArrowDown2 } from "iconsax-react";
+import { ArrowDown, ArrowDown2, Translate } from "iconsax-react";
+import { useTheme } from "next-themes";
 
 const data = [
   { id: 1, language: "English" },
@@ -9,22 +10,17 @@ const data = [
   { id: 3, language: "Francais" },
 ];
 
-export const TranslationPopover = () => {
-  const [opened, { close, toggle }] = useDisclosure(false);
-
+export const MobileTranslate = () => {
+  const { resolvedTheme } = useTheme();
   return (
-    <Popover
-      opened={opened}
-      onChange={close}
-      width="target"
-      position="bottom"
-      withArrow={false}
-    >
+    <Popover width={100} position="bottom" withArrow={false}>
       <Popover.Target>
-        <Text className="text-sm flex  gap-2 cursor-pointer" onClick={toggle}>
-          Pick Language
-          <ArrowDown2 size={18} />
-        </Text>
+        <span>
+          <Translate
+            size="22"
+            color={resolvedTheme === "light" ? "black" : "white"}
+          />
+        </span>
       </Popover.Target>
       <Popover.Dropdown
         sx={{
