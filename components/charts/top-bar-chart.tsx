@@ -7,36 +7,44 @@ import {
   Tooltip,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-// import { Bar } from "react-chartjs-2";
 
-export default function TopBarChart() {
+export default function TopBarChart({
+  barData,
+  color,
+  empty,
+}: {
+  barData: Array<number>;
+  color: string[];
+  empty: Array<string>;
+}) {
   ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
+
   const data = {
-    labels: ["", "", "", "", "", "", ""],
+    labels: empty,
     datasets: [
       {
         label: "764",
-        data: [55, 20, 35, 45, 35, 48, 30, 50],
-        backgroundColor: "#876AFE",
+        data: barData,
+        backgroundColor: color,
         // borderWidth: 1,
-        barPercentage: 0.3,
-        categoryPercentage: 0.5,
-        borderRadius: 20,
-        width: 15,
+        barPercentage: 0.7,
+        categoryPercentage: 0.7,
+        borderRadius: 14,
+        // width: 20,
       },
     ],
   };
 
   const options = {
-    responsiveness: true,
-    plugins: {
-      title: {
-        display: false,
-      },
-      legend: {
-        display: false,
-      },
-    },
+    // responsiveness: true,
+    // plugins: {
+    //   title: {
+    //     display: false,
+    //   },
+    //   legend: {
+    //     display: false,
+    //   },
+    // },
 
     scales: {
       x: {
@@ -55,21 +63,9 @@ export default function TopBarChart() {
     },
   };
 
-  // const config = {
-  //   type: "bar",
-  //   data: data,
-  //   options: {
-  //     scales: {
-  //       y: {
-  //         beginAtZero: true,
-  //         Ticks: false,
-  //       },
-  //     },
-  //   },
-  // };
   return (
-    <div className="bar h-[80px] w-full ">
-      <Bar data={data} options={options} width="100%" />
+    <div className="bar  w-[180px] ">
+      <Bar data={data} options={options} />
     </div>
   );
 }

@@ -8,6 +8,15 @@ const nextConfig = {
   },
 
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        hostname: "https://afex-frontend-technical-challenge-api.onrender.com",
+        pathname: "/logos/**",
+        port: "",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

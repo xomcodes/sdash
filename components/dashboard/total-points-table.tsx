@@ -1,7 +1,7 @@
 import { Table } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 
-import { builder } from "../api/builder";
+import { builder } from "../../api/builder";
 
 export function TotalPointsTable() {
   const { data: suppliesData } = useQuery({

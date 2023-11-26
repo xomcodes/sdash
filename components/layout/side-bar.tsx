@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "../icons";
 import { SideBarList } from "./side-bar-list";
-import { ThemeControl } from "../theme-control";
+import { ThemeControl } from "./theme-control";
 import { useTheme } from "next-themes";
 
 export const SideBar = () => {

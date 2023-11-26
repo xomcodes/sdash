@@ -1,11 +1,11 @@
 import { ArrowDown2, Profile2User } from "iconsax-react";
 import React from "react";
-import { IssuedCard, TransactionIcon } from "./icons";
+import { IssuedCard, TransactionIcon } from "../icons";
 import clsx from "clsx";
 import { RiArrowUpSFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
-import capitalize from "lodash.capitalize";
+
 import { amountFormatter } from "@/utils";
 
 const iconList = [
@@ -33,14 +33,15 @@ export const CardsStatiscs = () => {
           className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-my-blue rounded-lg  w-full min-w-[232px] "
         >
           <article className=" flex gap-2">
-            {iconList[idx]}
+            <span key={idx}>{iconList[idx]}</span>
+
             <h4
               style={{
                 color: textColor[idx],
               }}
               className="text-[clamp(10px,1vw,16px)] font-medium"
             >
-              {capitalize(name?.replace("_", " "))}
+              {name?.replace("_", " ")}
             </h4>
           </article>
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Divider } from "@mantine/core";
 import { EmptyWallet } from "iconsax-react";
-import { MasterCard, Visa } from "./icons";
+import { MasterCard, Visa } from "../icons";
 import { useTheme } from "next-themes";
 
 const transferList = [

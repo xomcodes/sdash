@@ -1,9 +1,10 @@
 import React from "react";
-import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "./icons";
+import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "../icons";
 import { Avatar, Divider } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 const transactionList = [
   {
@@ -41,6 +42,7 @@ const transactionList = [
   },
 ];
 const iconList = [<Sportify />, <Cloud />, <Adobe />, <Upwork />];
+const list = {};
 export const TransactionDetails = () => {
   const { data: latestTransaction } = useQuery({
     queryFn: () => builder.use().transactions.latest(),
@@ -65,8 +67,13 @@ export const TransactionDetails = () => {
         >
           <div className=" flex justify-between items-center">
             <section className=" flex gap-[12px]">
-              {/* <Avatar src={charged_by?.logo} size={24} /> */}
-              {iconList[idx]}
+              <img
+                src={charged_by?.logo}
+                className="rounded-full w-6 h-6"
+                alt="logo"
+              />
+
+              {/* {iconList[idx]} */}
 
               <article className=" flex flex-col gap-[2px]">
                 <h3 className=" text-[#121212] dark:text-white font-medium text-[12px] ">

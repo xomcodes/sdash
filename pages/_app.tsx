@@ -34,18 +34,17 @@ function getDirection(locale: string) {
   return "ltr";
 }
 
-const router = useRouter();
-
-const { locale } = router;
-const messagesForLocale = messages[locale as keyof typeof messages];
-
-if (!messagesForLocale) {
-  console.error(`No messages found for locale: ${locale}`);
-  // Handle the case where there's no matching locale
-  // Example: locale = "en";
-}
-
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  const { locale } = router;
+  const messagesForLocale = messages[locale as keyof typeof messages];
+
+  if (!messagesForLocale) {
+    console.error(`No messages found for locale: ${locale}`);
+    // Handle the case where there's no matching locale
+    // Example: locale = "en";
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider>
