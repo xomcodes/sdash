@@ -10,7 +10,7 @@ const TopBarChart = dynamic(() => import("../charts/top-bar-chart"), {
 });
 export const ActivityChart = () => {
   return (
-    <section className=" flex flex-col py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white dark:bg-my-blue  w-[19%] rounded-xl min-w-[230px] max-[850px]:min-w-ful ">
+    <section className=" flex flex-col py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white dark:bg-my-blue  w-[19%] rounded-xl min-w-[230px] max-[850px]:min-w-full ">
       <article className=" flex gap-2 items-center pb-4">
         <Coins />
 

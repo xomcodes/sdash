@@ -51,7 +51,7 @@ export const TransactionDetails = () => {
   });
 
   return (
-    <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl">
+    <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl flex-1">
       <article className=" flex gap-2 pb-4 items-center">
         <TransactionArrow />
         <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">

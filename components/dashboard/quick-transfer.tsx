@@ -37,7 +37,7 @@ const transferList = [
 export const QuickTransfer = () => {
   const { resolvedTheme } = useTheme();
   return (
-    <section className=" p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl overflow-auto  max-[1450px]:h-fit">
+    <section className=" flex-1 p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl overflow-auto  max-[1450px]:h-fit">
       <article className=" flex gap-2 pb-[12PX]">
         <EmptyWallet
           size="20"
