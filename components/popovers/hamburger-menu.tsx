@@ -10,7 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 export const HamburgerMenu = () => {
   return (
-    <Menu shadow="md" width="200">
+    <Menu shadow="md" width="200" position="bottom-end">
       <Menu.Target>
         <span>
           <GiHamburgerMenu />
@@ -19,13 +19,20 @@ export const HamburgerMenu = () => {
 
       <Menu.Dropdown>
         <Menu.Label>Smart Transaction</Menu.Label>
-        <Menu.Item sx={{}} icon={<Setting size={14} />}>
+        <Menu.Item
+          sx={{}}
+          icon={<Setting size={14} className="cursor-pointer" />}
+        >
           Settings
         </Menu.Item>
-        <Menu.Item icon={<Message size={14} />}>Messages</Menu.Item>
-        <Menu.Item icon={<Notification size={14} />}>Notification</Menu.Item>
+        <Menu.Item icon={<Message size={14} className="cursor-pointer" />}>
+          Messages
+        </Menu.Item>
+        <Menu.Item icon={<Notification size={14} className="cursor-pointer" />}>
+          Notification
+        </Menu.Item>
         <Menu.Item
-          icon={<SearchFavorite size={14} />}
+          icon={<SearchFavorite size={14} className="cursor-pointer" />}
           rightSection={
             <Text size="xs" color="dimmed">
               ⌘K
@@ -38,7 +45,9 @@ export const HamburgerMenu = () => {
         <Menu.Divider />
 
         <Menu.Label>Language Zone</Menu.Label>
-        <Menu.Item icon={<Translate size={14} />}>Languages</Menu.Item>
+        <Menu.Item icon={<Translate size={14} className="cursor-pointer" />}>
+          Languages
+        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );

@@ -33,7 +33,7 @@ export const CardsStatiscs = () => {
           key={idx}
           className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-my-blue rounded-lg  w-full min-w-[232px] "
         >
-          <article className=" flex gap-2">
+          <article className=" flex gap-2 items-center">
             <span key={idx}>{iconList[idx]}</span>
 
             <h4
@@ -72,7 +72,7 @@ export const CardsStatiscs = () => {
                     (current - (last_month / last_month) * 100)?.toString() <
                     "50"
                       ? "#D62C2C"
-                      : "#4EEA7",
+                      : "#4EEA7A",
                 }}
               >
                 {(current - (last_month / last_month) * 100)

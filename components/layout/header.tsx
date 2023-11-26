@@ -2,9 +2,9 @@ import React from "react";
 
 import { Message, SearchNormal, Notification } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
-import { GiHamburgerMenu } from "react-icons/gi";
+
 import { Avatar, TextInput, rem } from "@mantine/core";
-import { Hamburger, HamburgerMenu, TranslationPopover } from "@/popovers";
+import { HamburgerMenu, TranslationPopover } from "@/popovers";
 
 export const Header = () => {
   return (
@@ -24,7 +24,7 @@ export const Header = () => {
               paddingLeft: "14px",
               height: "fit-content",
               lineHeight: "normal",
-              border: `none`,
+              border: "0.0625rem solid transparent",
               background: "white",
               // background: resolvedTheme === "light" ? "white" : "#FFFFFFCC ",
               borderRadius: "15px",

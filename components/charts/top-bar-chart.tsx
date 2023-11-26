@@ -64,7 +64,7 @@ export default function TopBarChart({
   };
 
   return (
-    <div className="bar  w-[180px] ">
+    <div className="bar  w-[180px] max-[850px]:w-full ">
       <Bar data={data} options={options} />
     </div>
   );
