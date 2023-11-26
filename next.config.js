@@ -7,13 +7,14 @@ const nextConfig = {
     defaultLocale: "en",
   },
 
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     remotePatterns: [
       {
-        hostname: "https://afex-frontend-technical-challenge-api.onrender.com",
-        pathname: "/logos/**",
+        protocol: "https",
+        hostname: "afex-frontend-technical-challenge-api.onrender.com",
         port: "",
+        pathname: "/logos/**",
       },
     ],
   },

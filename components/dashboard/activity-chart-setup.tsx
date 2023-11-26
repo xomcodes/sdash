@@ -64,14 +64,22 @@ export const ActivityChart = () => {
               <p className=" text-[#A8A8A8] text-[14px] font-normal">
                 View Per Quarter
               </p>
-              <ArrowDown2 color="#121212" size={20} />
+              <ArrowDown2
+                color="#121212"
+                size={20}
+                className=" cursor-pointer"
+              />
             </div>
 
             <div className=" justify-between flex">
               <p className="text-[#A8A8A8] text-[14px] font-normal">
                 View Per Quarter
               </p>
-              <ArrowDown2 color="#121212" size={20} />
+              <ArrowDown2
+                color="#121212"
+                size={20}
+                className=" cursor-pointer"
+              />
             </div>
           </article>
         </section>

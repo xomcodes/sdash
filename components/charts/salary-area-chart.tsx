@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
 
-export const SalaryAreaChart = () => {
+export default function SalaryAreaChart() {
   const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
   const series = [
@@ -86,4 +86,4 @@ export const SalaryAreaChart = () => {
       <ApexCharts options={options} series={series} type="area" height={280} />
     </div>
   );
-};
+}

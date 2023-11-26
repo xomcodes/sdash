@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { RiArrowUpSFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
+import capitalize from "lodash.capitalize";
 
 import { amountFormatter } from "@/utils";
 
@@ -41,7 +42,7 @@ export const CardsStatiscs = () => {
               }}
               className="text-[clamp(10px,1vw,16px)] font-medium"
             >
-              {name?.replace("_", " ")}
+              {capitalize(name?.replace("_", " "))}
             </h4>
           </article>
 

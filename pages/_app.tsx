@@ -57,10 +57,9 @@ export default function App({ Component, pageProps }: AppProps) {
               | undefined
           }
         > */}
-        <Component {...pageProps} dir={getDirection(String(locale))} />
 
         <ThemeProvider attribute="class" enableSystem={false} enableColorScheme>
-          <Component {...pageProps} />
+          <Component {...pageProps} dir={getDirection(String(locale))} />
         </ThemeProvider>
         {/* </IntlProvider> */}
       </MantineProvider>

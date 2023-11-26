@@ -1,10 +1,10 @@
 import React from "react";
-import { TranslationPopover } from "../dashboard";
 
 import { Message, SearchNormal, Notification } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Avatar, TextInput, rem } from "@mantine/core";
+import { Hamburger, HamburgerMenu, TranslationPopover } from "@/popovers";
 
 export const Header = () => {
   return (
@@ -46,29 +46,30 @@ export const Header = () => {
         />
       </div>
 
-      <section className="flex gap-[clamp(16px,2.2vw,32px)] items-center ">
-        <div className=" flex gap-[clamp(12px,1.6vw,24px)] items-center max-[961px]:hidden">
-          <TranslationPopover />
-          <Message size="24" className=" cursor-pointer" />
-          <RiSettingsLine size="24" className=" cursor-pointer" />
-          <Notification size="24" className=" cursor-pointer" />
-        </div>
+      <div className=" flex justify-between  items-center max-[960px]:w-full">
+        <section className="flex gap-[clamp(16px,2.2vw,32px)] items-center ">
+          <div className=" flex gap-[clamp(12px,1.6vw,24px)] items-center max-[961px]:hidden">
+            <TranslationPopover />
+            <Message size="24" className=" cursor-pointer" />
+            <RiSettingsLine size="24" className=" cursor-pointer" />
+            <Notification size="24" className=" cursor-pointer" />
+          </div>
 
-        <div className=" flex gap-[14px] items-center whitespace-nowrap ">
-          <Avatar src="/profile-pix.svg" size={32} />
-          <h4 className=" text-[16px] font-normal text-my-black dark:text-white">
-            Alex Smith
-          </h4>
-        </div>
+          <div className=" flex gap-[14px] items-center whitespace-nowrap ">
+            <Avatar src="/profile-pix.svg" size={32} />
+            <h4 className=" text-[16px] font-normal text-my-black dark:text-white">
+              Alex Smith
+            </h4>
+          </div>
 
-        <article className="  gap-[clamp(16px,2.2vw,32px)] items-center hidden max-[960px]:flex">
-          <TranslationPopover />
-        </article>
-
+          <article className="  gap-[clamp(16px,2.2vw,32px)] items-center hidden max-[960px]:flex">
+            <TranslationPopover />
+          </article>
+        </section>
         <article className="  gap-[clamp(16px,2.2vw,32px)] items-center hidden max-[960px]:flex max-[960px]:items-end ">
-          <GiHamburgerMenu size={22} className="cursor-pointer" />
+          <HamburgerMenu />
         </article>
-      </section>
+      </div>
     </header>
   );
 };
