@@ -1,7 +1,28 @@
 {
   "page.home.head.title": "Next.js i18n voorbeeld",
   "page.home.head.meta.description": "Next.js i18n voorbeeld - Nederlands (Nederland)",
-  "page.home.title": "Welkom bij <b>Next.js i18n zelfstudie</b>",
   "page.home.description": "U bekijkt momenteel de homepage in het Nederlands (Nederland) 🚀",
-  "page.home.sidebar.data": "gqdwfuyu3drtwuywrkudwyddrydk"
+  "page.home.title": "Welkom bij <b>Next.js i18n zelfstudie</b>",
+  "page.home.sidebar.dashboard": "Données clients",
+  "page.home.sidebar.customer": "Tableau de bord",
+  "page.home.sidebar.data": {
+    "home": "Thuis",
+    "files": "Bestanden",
+    "deadlines": "Deadline Project",
+    "management": "Beheer",
+    "database": "Database"
+  },
+  "page.home.sidebar.lowerpartdata": {
+    "team": "Team Award",
+    "invoice": "Factuurgegevens",
+    "settings": "Instellingen",
+    "announcement": "Aankondiging",
+    "media": "Media-assets",
+    "client": "Klantfeedback"
+  },
+
+  "page.home.header.placeholder": "Rechercher une propriété",
+  "page.home.hero.active-users": ["Utilisateurs actifs", "14.7M", "32%"],
+  "page.home.hero.active-transactions": ["Transactions", "1,234.10 $", "32%"],
+  "page.home.hero.active.cards.issued": ["Cartes émises", "3,442", "32%"]
 }
