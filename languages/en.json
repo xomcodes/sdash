@@ -3,12 +3,12 @@
   "page.home.head.meta.description": "Next.js i18n example - English",
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
-  "page.home.sidebar.dashoard": "Dashboard",
+  "page.home.sidebar.dashboard": "Dashboard",
   "page.home.sidebar.customer": "Customer Data",
   "page.home.sidebar.data": {
     "home": "Home",
     "files": "Files",
-    " deadlines": "Deadline Project",
+    "deadlines": "Deadline Project",
     "management": "Management",
     "database": "Database"
   },
@@ -17,7 +17,7 @@
     "invoice": "Invoice Data",
     "settings": "Settings",
     "announcement": "Announcement",
-    " media ": "Media Assets",
+    "media": "Media Assets",
     "client": "Client Feedback"
   },
   "page.home.header.placeholder": "Search property",

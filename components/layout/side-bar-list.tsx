@@ -12,48 +12,50 @@ export const SideBarList = () => {
   const { pathname } = useRouter();
 
   const intl = useIntl();
-  const Dashboard = intl.messages["page.home.sidebar.dashboard"];
+  const dashboard = intl.messages["page.home.sidebar.dashboard"] as string;
+  const customer = intl.messages["page.home.sidebar.customer"] as string;
   const sidebarData = intl.messages[
     "page.home.sidebar.data"
   ] as unknown as Record<string, string>;
-  const sidebarLowerData: String | MessageFormatElement[] =
-    intl.messages["page.home.sidebar.lowerpartdata"];
+  const sidebarLowerData = intl.messages[
+    "page.home.sidebar.lowerpartdata"
+  ] as unknown as Record<string, string>;
 
   const listArr = [
     {
       id: 1,
-      name: "Dashboard",
+      name: dashboard,
       children: [
         {
           id: 1,
           icon: <Category size="22" />,
-          name: "Home",
+          name: sidebarData?.home,
           link: "/",
         },
         {
           id: 2,
           icon: <FaRegUser size="22" />,
-          name: "Files",
+          name: sidebarData?.files,
           link: "#",
         },
 
         {
           id: 3,
           icon: <PiBriefcaseLight size="22" />,
-          name: "Deadline Project",
+          name: sidebarData?.deadlines,
           link: "#",
         },
 
         {
           id: 4,
           icon: <SlLock size="22" />,
-          name: "Management",
+          name: sidebarData?.management,
           link: "#",
         },
         {
           id: 5,
           icon: <SlLock size="22" />,
-          name: "Database",
+          name: sidebarData?.database,
           link: "#",
         },
       ],
@@ -61,44 +63,44 @@ export const SideBarList = () => {
 
     {
       id: 2,
-      name: "Customer Data",
+      name: customer,
       children: [
         {
           id: 1,
           icon: <Category size="22" />,
-          name: "Team Award",
+          name: sidebarLowerData?.team,
           link: "#",
         },
         {
           id: 2,
           icon: <FaRegUser size="22" />,
-          name: "Invoice Data",
+          name: sidebarLowerData?.invoice,
           link: "#",
         },
 
         {
           id: 3,
           icon: <PiBriefcaseLight size="22" />,
-          name: "Settings",
+          name: sidebarLowerData?.settings,
           link: "#",
         },
 
         {
           id: 4,
           icon: <SlLock size="22" />,
-          name: "Announcement",
+          name: sidebarLowerData?.announcement,
           link: "#",
         },
         {
           id: 5,
           icon: <SlLock size="22" />,
-          name: "Media Assets",
+          name: sidebarLowerData?.media,
           link: "#",
         },
         {
           id: 6,
           icon: <SlLock size="22" />,
-          name: "Client Feedback",
+          name: sidebarLowerData?.client,
           link: "#",
         },
       ],
