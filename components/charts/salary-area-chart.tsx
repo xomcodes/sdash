@@ -57,6 +57,7 @@ export default function SalaryAreaChart() {
       },
     },
     tooltip: {
+      theme: "transparent",
       x: {
         format: "dd/MM/yy HH:mm",
       },

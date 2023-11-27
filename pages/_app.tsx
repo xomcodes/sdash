@@ -19,12 +19,12 @@ const queryClient = new QueryClient({
   },
 });
 
-const messages = {
-  ar,
-  en,
-  fr,
-  "nl-NL": nl_NL,
-};
+// const messages = {
+//   "zh-Hans": zh_Hans,
+//   en,
+//   fr,
+//   "nl-NL": nl_NL,
+// };
 
 function getDirection(locale: string) {
   if (locale === "ar") {
@@ -34,17 +34,19 @@ function getDirection(locale: string) {
   return "ltr";
 }
 
+const handleClick = () => {};
+
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const { locale, locales, push } = useRouter();
 
-  const { locale } = router;
-  const messagesForLocale = messages[locale as keyof typeof messages];
+  // const { locale } = router;
+  // const messagesForLocale = messages[locale as keyof typeof messages];
 
-  if (!messagesForLocale) {
-    console.error(`No messages found for locale: ${locale}`);
-    // Handle the case where there's no matching locale
-    // Example: locale = "en";
-  }
+  // if (!messagesForLocale) {
+  //   console.error(`No messages found for locale: ${locale}`);
+  //   // Handle the case where there's no matching locale
+  //   // Example: locale = "en";
+  // }
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider>

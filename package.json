@@ -24,6 +24,7 @@
     "iconsax-react": "^0.0.8",
     "lodash.capitalize": "^4.2.1",
     "next": "13.4.19",
+    "next-i18next": "^15.0.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-apexcharts": "1.4.1",

@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
+const { i18 } = require("./next-i18next.config");
 const nextConfig = {
   i18n: {
-    // The locales you want to support in your app
-    locales: ["ar", "en", "fr", "nl-NL"],
-    // The default locale you want to be used when visiting a non-locale prefixed path e.g. `/hello`
+    // List of locales you want to support
+    locales: ["de", "zh-Hans", "en", "fr"],
+    //  Your Default locale. Mine is English
     defaultLocale: "en",
   },
 

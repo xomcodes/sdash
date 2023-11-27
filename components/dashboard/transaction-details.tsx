@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "../icons";
-import { Avatar, Divider } from "@mantine/core";
+import { Avatar, Divider, LoadingOverlay } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import dayjs from "dayjs";
@@ -44,14 +44,14 @@ const transactionList = [
 ];
 
 const list: Record<string, ReactNode> = {
-  Sportify: <Sportify />,
+  Spotify: <Sportify />,
   "Google Cloud": <Cloud />,
   "Adobe XD 2023": <Adobe />,
   Upwork: <Upwork />,
 };
 export const TransactionDetails = () => {
   const { resolvedTheme } = useTheme();
-  const { data: latestTransaction } = useQuery({
+  const { data: latestTransaction, isLoading } = useQuery({
     queryFn: () => builder.use().transactions.latest(),
     queryKey: builder.transactions.latest.get(),
     select: ({ data }) => data?.data,
@@ -95,6 +95,7 @@ export const TransactionDetails = () => {
           </div>
         </section>
       ))}
+      <LoadingOverlay visible={isLoading} />
     </section>
   );
 };
