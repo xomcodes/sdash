@@ -18,7 +18,6 @@ export default function SalaryAreaChart() {
   const series = [
     {
       name: "Salary",
-      // data: [31, 40, 28, 51, 42, 109, 100],
       data: salaryData?.map((item) => item?.salary_paid),
     },
     {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Coins } from "../icons";
 
-import { Divider } from "@mantine/core";
 import dynamic from "next/dynamic";
 import { ArrowDown2 } from "iconsax-react";
 import { useTheme } from "next-themes";
@@ -38,8 +37,6 @@ export const ActivityChart = () => {
             empty={["", "", "", "", "", "", ""]}
           />
         </figure>
-
-        {/* <span className=" hidden  border-l max-[1370px]:flex"></span> */}
 
         <section className=" flex-col flex ">
           <figure className=" flex flex-col gap-[10px] ">

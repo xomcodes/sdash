@@ -6,9 +6,19 @@ import React from "react";
 import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
 import { SlLock } from "react-icons/sl";
+import { MessageFormatElement, useIntl } from "react-intl";
 
 export const SideBarList = () => {
   const { pathname } = useRouter();
+
+  const intl = useIntl();
+  const Dashboard = intl.messages["page.home.sidebar.dashboard"];
+  const sidebarData = intl.messages[
+    "page.home.sidebar.data"
+  ] as unknown as Record<string, string>;
+  const sidebarLowerData: String | MessageFormatElement[] =
+    intl.messages["page.home.sidebar.lowerpartdata"];
+
   const listArr = [
     {
       id: 1,

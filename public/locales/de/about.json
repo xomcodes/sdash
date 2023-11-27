@@ -1,0 +1,18 @@
+{
+  "page.sidebar-top": [
+    "Home",
+    "Files",
+    "Deadline Project",
+    "Management",
+    "Database"
+  ],
+
+  "page.sidebar-down": [
+    "Team Award",
+    "Invoice Data",
+    "Settings",
+    "Announcement",
+    "Media Assets",
+    "Client Feedback"
+  ]
+}

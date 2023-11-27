@@ -1,23 +1,19 @@
-import { ArrowDown2, Profile2User } from "iconsax-react";
 import React, { ReactNode } from "react";
 import { IssuedCard, TransactionIcon } from "../icons";
-import clsx from "clsx";
-import { RiArrowUpSFill } from "react-icons/ri";
-import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
+
+import { ArrowDown2, Profile2User } from "iconsax-react";
+import clsx from "clsx";
+import { useQuery } from "@tanstack/react-query";
 import capitalize from "lodash.capitalize";
 
 import { amountFormatter } from "@/utils";
 
-const iconList : Record<string, ReactNode> = {
+const iconList: Record<string, ReactNode> = {
   active_users: <Profile2User color="#2F70F2" />,
   transactions: <TransactionIcon />,
   cards_issued: <IssuedCard />,
 };
-
-
-
-
 
 const textColor = ["#2F70F2", "#876AFE ", "#FFBC02"];
 
@@ -29,7 +25,7 @@ export const CardsStatiscs = () => {
   });
 
   return (
-    <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto ">
+    <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto scroll-bar-hidden ">
       {cardData?.map(({ name, current, last_month }, idx) => (
         <section
           key={idx}

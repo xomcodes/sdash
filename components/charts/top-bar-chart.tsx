@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Chart as ChartJS,
   BarElement,
@@ -26,26 +27,14 @@ export default function TopBarChart({
         label: "764",
         data: barData,
         backgroundColor: color,
-        // borderWidth: 1,
         barPercentage: 0.7,
         categoryPercentage: 0.7,
         borderRadius: 14,
-        // width: 20,
       },
     ],
   };
 
   const options = {
-    // responsiveness: true,
-    // plugins: {
-    //   title: {
-    //     display: false,
-    //   },
-    //   legend: {
-    //     display: false,
-    //   },
-    // },
-
     scales: {
       x: {
         grid: {

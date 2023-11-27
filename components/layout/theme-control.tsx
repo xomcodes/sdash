@@ -23,10 +23,8 @@ export const ThemeControl = () => {
         )}
       >
         <Sun1
-          // className={resolvedTheme === "light" ? "#A3AED0" : "#ffff"}
           size="24"
           color={resolvedTheme === "light" ? "#000" : "#fff"}
-          // #5B5A5A
           variant="Bold"
         />
         <h2

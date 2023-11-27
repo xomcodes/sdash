@@ -1,8 +1,9 @@
 import React from "react";
 import { Popover, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ArrowDown, ArrowDown2, Link } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const data = [
   { id: 1, language: "English" },
@@ -12,11 +13,7 @@ const data = [
 
 export const TranslationPopover = () => {
   const [opened, { close, toggle }] = useDisclosure(false);
-  const { locale, locales, push } = useRouter();
-
-  const handleClick = (l: string) => () => {
-    push("/", undefined, { locale: l });
-  };
+  const { locales } = useRouter();
 
   return (
     // <Popover
@@ -71,14 +68,26 @@ export const TranslationPopover = () => {
         className="dark:bg-my-blue dark:border-none"
       >
         <div className=" flex flex-col gap-1">
-          {locales?.map((l, idx) => (
+          {[...(locales as string[])].sort().map((locale) => (
             <div
-              className="iflex gap-2 p-2 rounded-lg hover:bg-[#ddd] dark:hover:bg-[#2D6DED] "
-              onClick={handleClick(l)}
-              key={idx}
+              className="iflex gap-2 p-2 rounded-lg hover:bg-[#ddd] dark:hover:bg-[#2D6DED]"
+              key={locale}
             >
-              <Link href="/" local={l}>
-                <Text className="cursor-pointer">{l}</Text>
+              <Link
+                href="/"
+                locale={locale}
+                onClick={() => {
+                  close();
+                }}
+              >
+                {locale === "en"
+                  ? "English"
+                  : locale === "ar"
+                  ? "Arabic"
+                  : locale === "fr"
+                  ? "French"
+                  : "Dutsh"}
+                {/* <Text className="cursor-pointer">{l}</Text> */}
               </Link>
             </div>
           ))}

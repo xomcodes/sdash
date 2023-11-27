@@ -20,7 +20,6 @@ export const DashboardMain = () => {
           <QuickTransfer />
         </div>
       </section>
-      {/* dark:bg-[#111C44] Dashboardmain */}
 
       <div className=" flex gap-[clamp(12px,1.6vw,24px)] max-[850px]:flex-col ">
         <ActivityChart />

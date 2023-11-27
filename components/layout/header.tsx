@@ -2,7 +2,6 @@ import React from "react";
 
 import { Message, SearchNormal, Notification, Add } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
-
 import { Avatar, TextInput, rem } from "@mantine/core";
 import { HamburgerMenu, MobileTranslate, TranslationPopover } from "@/popovers";
 
@@ -47,7 +46,6 @@ export const Header = () => {
       </div>
       <div className=" hidden max-[734px]:flex"></div>
 
-      {/* <div className=" flex justify-between  items-center max-[960px]:w-full"> */}
       <section className="flex gap-[clamp(16px,2.2vw,32px)] items-center ">
         <div className=" flex gap-[clamp(12px,1.6vw,24px)] items-center max-[961px]:hidden">
           <TranslationPopover />
@@ -58,7 +56,6 @@ export const Header = () => {
 
         <article className="  gap-[clamp(16px,2.2vw,32px)] items-center hidden max-[960px]:flex">
           <MobileTranslate />
-          {/* <Demo /> */}
         </article>
         <div className=" flex gap-[14px] items-center whitespace-nowrap ">
           <Avatar src="/profile-pix.svg" size={32} />
@@ -71,8 +68,6 @@ export const Header = () => {
           <HamburgerMenu />
         </article>
       </section>
-
-      {/* </div> */}
     </header>
   );
 };
