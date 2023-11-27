@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
-import Chart from "react-apexcharts";
+
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import dayjs from "dayjs";
@@ -13,16 +13,19 @@ export default function SalaryAreaChart() {
     queryKey: builder.transactions.pay_logs.get(),
     select: ({ data }) => data?.data,
   });
-  console.log({ salaryData });
 
   const series = [
     {
       name: "Salary",
-      data: salaryData?.map((item) => item?.salary_paid),
+      data: salaryData?.map((item) =>
+        item?.salary_paid?.toString()?.slice(0, 3)
+      ),
     },
     {
       name: "Cash Bond",
-      data: salaryData?.map((item) => item?.cash_bond_bought),
+      data: salaryData?.map((item) =>
+        item?.cash_bond_bought?.toString()?.slice(0, 3)
+      ),
     },
   ];
   const options: ApexOptions = {

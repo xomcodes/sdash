@@ -1,10 +1,11 @@
 import React, { ReactNode } from "react";
 import { Adobe, Cloud, Sportify, TransactionArrow, Upwork } from "../icons";
-import { Avatar, Divider, LoadingOverlay } from "@mantine/core";
-import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
+
+import { LoadingOverlay } from "@mantine/core";
+import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
-import Image from "next/image";
+
 import { useTheme } from "next-themes";
 import { useIntl } from "react-intl";
 

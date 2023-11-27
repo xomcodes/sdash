@@ -1,18 +1,20 @@
+import React, { useEffect, useState } from "react";
+
 import { clsx } from "@mantine/core";
 import { Moon, Sun1 } from "iconsax-react";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
 
 export const ThemeControl = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
   if (!mounted) return null;
+
   return (
     <main className=" bg-gray-300 dark:bg-[#2D6DED] w-fit px-2 py-2 rounded-lg flex gap-2 items-center">
-      {/* #282541 */}
       <section
         onClick={() => setTheme("light")}
         className={clsx(

@@ -1,6 +1,7 @@
+import React from "react";
+
 import { Text } from "@mantine/core";
 import { ArrowDown2 } from "iconsax-react";
-import React from "react";
 import dynamic from "next/dynamic";
 import { IoMdSquare } from "react-icons/io";
 

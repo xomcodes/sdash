@@ -47,7 +47,6 @@ export const TranslationPopover = () => {
                   : locale === "chn"
                   ? "Chinese"
                   : "Dutch"}
-                {/* <Text className="cursor-pointer">{l}</Text> */}
               </Link>
             </div>
           ))}

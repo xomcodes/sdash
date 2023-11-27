@@ -12,8 +12,8 @@ export const HamburgerMenu = () => {
   return (
     <Menu shadow="md" width="200" position="bottom-end">
       <Menu.Target>
-        <span>
-          <GiHamburgerMenu />
+        <span className=" cursor-pointer">
+          <GiHamburgerMenu className="cursor-pointer" />
         </span>
       </Menu.Target>
 

@@ -1,9 +1,9 @@
 import React from "react";
+import { HamburgerMenu, MobileTranslate, TranslationPopover } from "@/popovers";
 
 import { Message, SearchNormal, Notification, Add } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
 import { Avatar, TextInput, rem } from "@mantine/core";
-import { HamburgerMenu, MobileTranslate, TranslationPopover } from "@/popovers";
 import { useIntl } from "react-intl";
 
 export const Header = () => {

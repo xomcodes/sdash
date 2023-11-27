@@ -1,12 +1,12 @@
+import React from "react";
+
 import clsx from "clsx";
-import { link } from "fs";
 import { Category, Icon } from "iconsax-react";
 import { useRouter } from "next/router";
-import React from "react";
 import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
 import { SlLock } from "react-icons/sl";
-import { MessageFormatElement, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 
 export const SideBarList = () => {
   const { pathname } = useRouter();

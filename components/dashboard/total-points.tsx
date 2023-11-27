@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Coins } from "../icons";
 import { TotalPointsTable } from "./total-points-table";
 
-import { Divider } from "@mantine/core";
 import { useIntl } from "react-intl";
 
 export const TotalPoints = () => {

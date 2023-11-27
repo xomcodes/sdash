@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Popover, Text } from "@mantine/core";
+import Link from "next/link";
+
+import { Popover } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ArrowDown, ArrowDown2, Translate } from "iconsax-react";
+import { Translate } from "iconsax-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 const data = [
   { id: 1, language: "English" },
@@ -19,9 +20,10 @@ export const MobileTranslate = () => {
   return (
     <Popover width={100} position="bottom" withArrow={false}>
       <Popover.Target>
-        <span>
+        <span className=" cursor-pointer">
           <Translate
             size="22"
+            className=" cursor-pointer"
             color={resolvedTheme === "light" ? "black" : "white"}
           />
         </span>
@@ -50,7 +52,6 @@ export const MobileTranslate = () => {
                   : locale === "chn"
                   ? "Chinese"
                   : "Dutch"}
-                {/* <Text className="cursor-pointer">{l}</Text> */}
               </Link>
             </div>
           ))}
