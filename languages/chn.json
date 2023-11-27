@@ -1,0 +1,24 @@
+{
+  "page.home.sidebar.dashboard": "仪表板",
+  "page.home.sidebar.customer": "客户 数据 ",
+  "page.home.sidebar.data": {
+    "home": "家",
+    "files": "文件",
+    "deadlines": "截止日期项目",
+    "management": "管理",
+    "database": "数据库"
+  },
+  "page.home.sidebar.lowerpartdata": {
+    "team": "团队奖",
+    "invoice": "发票数据 ",
+    "settings": "设置",
+    "announcement": "公告",
+    "media": "媒体资产",
+    "client": "客户反馈 "
+  },
+  "page.home.header.placeholder": "搜索属性",
+  "page.home.hero.activity.charts": "活动图表",
+  "page.home.hero.transaction.details": "交易明细",
+  "page.home.hero.quick.transfer": "快速转账",
+  "page.home.hero.total.points": "总分"
+}

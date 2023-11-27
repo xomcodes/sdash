@@ -4,19 +4,25 @@ import { Coins } from "../icons";
 import dynamic from "next/dynamic";
 import { ArrowDown2 } from "iconsax-react";
 import { useTheme } from "next-themes";
+import { useIntl } from "react-intl";
 
 const TopBarChart = dynamic(() => import("../charts/top-bar-chart"), {
   ssr: false,
 });
 export const ActivityChart = () => {
   const { resolvedTheme } = useTheme();
+  const intl = useIntl();
+  const activityCharts = intl.messages[
+    "page.home.hero.activity.charts"
+  ] as string;
+
   return (
     <section className=" flex flex-col py-[clamp(14px,1.9vw,28px)] px-[clamp(12px,1.6vw,24px)] bg-white dark:bg-my-blue  w-[19%] rounded-xl min-w-[230px] max-[850px]:min-w-full ">
       <article className=" flex gap-2 items-center pb-4 border-b border-b-[#E3E3E3] dark:border-b-grey">
         <Coins />
 
         <h2 className=" text-[#121212] dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
-          Activity Charts
+          {activityCharts}
         </h2>
       </article>
 

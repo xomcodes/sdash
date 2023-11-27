@@ -21,7 +21,8 @@
     "client": "Client Feedback"
   },
   "page.home.header.placeholder": "Search property",
-  "page.home.hero.active-users": ["Active Users", "14.7M", "32%"],
-  "page.home.hero.active-transactions": ["Transactions", "$1.234.10", "32%"],
-  "page.home.hero.active.cards.issued": ["Cards Issued", "3.442", "32%"]
+  "page.home.hero.activity.charts": "Activity Charts",
+  "page.home.hero.transaction.details": "Transaction Details",
+  "page.home.hero.quick.transfer": "Quick Transfer",
+  "page.home.hero.total.points": "Total Points"
 }

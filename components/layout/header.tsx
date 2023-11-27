@@ -4,8 +4,11 @@ import { Message, SearchNormal, Notification, Add } from "iconsax-react";
 import { RiSettingsLine } from "react-icons/ri";
 import { Avatar, TextInput, rem } from "@mantine/core";
 import { HamburgerMenu, MobileTranslate, TranslationPopover } from "@/popovers";
+import { useIntl } from "react-intl";
 
 export const Header = () => {
+  const intl = useIntl();
+  const placeholder = intl.messages["page.home.header.placeholder"] as string;
   return (
     <header className="flex justify-between py-[16px] px-[32px] bg-[#F7F7FF] dark:bg-[#2b396b] ">
       <div className=" max-[734px]:hidden">
@@ -25,12 +28,12 @@ export const Header = () => {
               lineHeight: "normal",
               border: "0.0625rem solid transparent",
               background: "white",
-              // background: resolvedTheme === "light" ? "white" : "#FFFFFFCC ",
+
               borderRadius: "15px",
               paddingBlock: "15px",
               "&::placeholder": {
                 color: "#ccc",
-                // color: resolvedTheme === "light" ? "#ccc" : "#000 ",
+
                 fontWeight: 400,
                 fontSize: "14px",
                 lineHeight: "22.4px",
@@ -41,7 +44,7 @@ export const Header = () => {
             },
           }}
           icon={<SearchNormal size={22} color="#ccc" />}
-          placeholder="Search Property..."
+          placeholder={placeholder}
         />
       </div>
       <div className=" hidden max-[734px]:flex"></div>

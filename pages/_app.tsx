@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { IntlProvider, MessageFormatElement } from "react-intl";
-import ar from "@/languages/ar.json";
+import chn from "@/languages/chn.json";
 import en from "@/languages/en.json";
 import fr from "@/languages/fr.json";
 import nl_NL from "@/languages/nl-NL.json";
@@ -27,19 +27,10 @@ const queryClient = new QueryClient({
 // };
 
 const messages = {
-  ar,
+  chn,
   en,
-  fr,
   "nl-NL": nl_NL,
 };
-
-function getDirection(locale: string) {
-  if (locale === "ar") {
-    return "rtl";
-  }
-
-  return "ltr";
-}
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -59,10 +50,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <IntlProvider
             locale={String(locale)}
             messages={
-              messagesForLocale as
+              messagesForLocale as unknown as
                 | Record<string, string>
                 | Record<string, MessageFormatElement[]>
-                | undefined
             }
           >
             <Component {...pageProps} />

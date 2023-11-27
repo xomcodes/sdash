@@ -4,6 +4,7 @@ import { Divider } from "@mantine/core";
 import { EmptyWallet } from "iconsax-react";
 import { MasterCard, Visa } from "../icons";
 import { useTheme } from "next-themes";
+import { useIntl } from "react-intl";
 
 const transferList = [
   {
@@ -35,6 +36,10 @@ const transferList = [
 ];
 
 export const QuickTransfer = () => {
+  const intl = useIntl();
+  const quickTransfer = intl.messages[
+    "page.home.hero.quick.transfer"
+  ] as string;
   const { resolvedTheme } = useTheme();
   return (
     <section className=" flex-1 p-[20px] flex flex-col bg-white dark:bg-my-blue rounded-xl overflow-auto  max-[1450px]:h-fit">
@@ -44,7 +49,7 @@ export const QuickTransfer = () => {
           color={resolvedTheme === "light" ? "#000" : "#fff"}
         />
         <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
-          Quick Transfer
+          {quickTransfer}
         </h2>
       </article>
       <Divider bg="#E3E3E3" />

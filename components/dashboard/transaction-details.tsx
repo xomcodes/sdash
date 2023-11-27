@@ -6,6 +6,7 @@ import { builder } from "@/api/builder";
 import dayjs from "dayjs";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useIntl } from "react-intl";
 
 const transactionList = [
   {
@@ -50,6 +51,10 @@ const list: Record<string, ReactNode> = {
   Upwork: <Upwork />,
 };
 export const TransactionDetails = () => {
+  const intl = useIntl();
+  const transactionDetails = intl.messages[
+    "page.home.hero.transaction.details"
+  ] as string;
   const { resolvedTheme } = useTheme();
   const { data: latestTransaction, isLoading } = useQuery({
     queryFn: () => builder.use().transactions.latest(),
@@ -62,7 +67,7 @@ export const TransactionDetails = () => {
       <article className=" flex gap-2 pb-4 items-center border-b border-b-[#E3E3E3] dark:border-b-grey">
         <TransactionArrow />
         <h2 className=" text-my-black dark:text-white text-[clamp(13px,1vw,16px)] font-medium">
-          Transaction Details
+          {transactionDetails}
         </h2>
       </article>
 
